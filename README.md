@@ -3,7 +3,7 @@
 # Predicting orange sugar from images
 
 Note: đầu vào của api có thể cho vào nhiều ảnh hoặc nén vào 1 file zip và upload 1 lần !
-![input](data/image/image_1_5.jpeg)
+![input](data/image_test/A1_1.jpeg)
 
 Dưới đây là một ví dụ README hướng dẫn chạy API này:
 
@@ -42,11 +42,11 @@ Dưới đây là một ví dụ README hướng dẫn chạy API này:
 4. API sẽ chạy trên `http://127.0.0.1:8000`.
 
    
-   ![input_file](input.png)
+   ![input_file](utils/input.png)
 
 5. Sau khi ấn Choose File, nhập file của bạn vào và ấn Execute thì lướt xuống dưới sẽ có kết quả ở đây
    
-![result](result.png)
+![result](utils/result.png)
 
 ## Sử dụng API
 
