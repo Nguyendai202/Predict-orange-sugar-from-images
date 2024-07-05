@@ -35,7 +35,6 @@ class CamSegmentationModel(object):
             predict = self.model(image)
             mask = np.round(predict[0])
             mask = tf.cast(mask, dtype=tf.uint8)*255
-            # cv2.imwrite('segment_new.jpg',  np.array( mask))
             if img_old.shape[:2] != mask.shape[:2]:
                 mask = cv2.resize(
                     mask, (img_old.shape[1], img_old.shape[0]))
