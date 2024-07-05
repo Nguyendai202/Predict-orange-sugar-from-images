@@ -36,7 +36,7 @@ Dưới đây là một ví dụ README hướng dẫn chạy API này:
 3. Chạy API bằng lệnh sau:
 
    ```bash
-   python _api_.py
+   python main.py
    ```
 
 4. API sẽ chạy trên `http://127.0.0.1:8000`.
@@ -48,16 +48,11 @@ Dưới đây là một ví dụ README hướng dẫn chạy API này:
    
 ![result](utils/result.png)
 
-## Sử dụng API
-
-API này chỉ có một endpoint `/docs` nhận một hoặc nhiều ảnh làm tham số đầu vào và đầu ra là 1 số thực đại diện cho mục tiêu của bài toán là độ đường
-
-
 
 ### Request
 
 - Phương thức: POST
-- Endpoint: `http://127.0.0.1:8000/docs`
+- Endpoint: `http://127.0.0.1:8000/upload-images`
 - Header: không yêu cầu
 - Body:
   - Loại: form-data
@@ -66,7 +61,7 @@ API này chỉ có một endpoint `/docs` nhận một hoặc nhiều ảnh làm
 
 ### Response
 
-Loại: float
+Loại: type dict
 
 
 
