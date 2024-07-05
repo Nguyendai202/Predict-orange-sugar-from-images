@@ -1,4 +1,3 @@
-from tensorflow import keras
 import cv2
 import numpy as np
 import tensorflow as tf
@@ -34,26 +33,18 @@ class CamSegmentationModel(object):
             img = np.array(img_old, dtype=np.float64)
             imgnormal = img * 1 / 255.0
             image = np.expand_dims(imgnormal, axis=0).astype(np.float32)
-            start_time = time.time()
             predict = self.model(image)
-            time_segment = time.time() - start_time
-            # print(time_segment)
-            # Check if the image has a mask
-            if np.array(predict).round().astype(int).sum() == 0:
-                has_mask = 0
-            else:
-                has_mask = 1
-                mask = np.round(predict[0])
-                mask = tf.cast(mask, dtype=tf.uint8)*255
-                # cv2.imwrite('segment_new.jpg',  np.array( mask))
-                if img_old.shape[:2] != mask.shape[:2]:
-                    mask = cv2.resize(
-                        mask, (img_old.shape[1], img_old.shape[0]))
-                # Chuyển đổi mask thành float32
-                mask = tf.cast(mask, dtype=tf.float32) / \
-                    255.0  # chuyển về dạng 0-1
-                # element wise từng kênh màu với mask
-                result = np.multiply(img_old, mask)
+            mask = np.round(predict[0])
+            mask = tf.cast(mask, dtype=tf.uint8)*255
+            # cv2.imwrite('segment_new.jpg',  np.array( mask))
+            if img_old.shape[:2] != mask.shape[:2]:
+                mask = cv2.resize(
+                    mask, (img_old.shape[1], img_old.shape[0]))
+            # Chuyển đổi mask thành float32
+            mask = tf.cast(mask, dtype=tf.float32) / \
+                255.0  # chuyển về dạng 0-1
+            # element wise từng kênh màu với mask
+            result = np.multiply(img_old, mask)
         except Exception as e:
             logging.error(
                 f'Error segmenting image in segmentation_orange from segmentation: {str(e)}')
