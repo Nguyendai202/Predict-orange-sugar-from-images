@@ -1,6 +1,6 @@
 Tạo một folder đặt tên là configs và để các model vào đó!
 
-[doaw load model from here ](https://drive.google.com/drive/folders/1AXOT72URLVdg6kTIm3d0Iq6-EYi6Q8Sd?usp=sharing)
+[doawload model from here ](https://drive.google.com/drive/folders/1AXOT72URLVdg6kTIm3d0Iq6-EYi6Q8Sd?usp=sharing)
 
 # Predicting orange sugar from images
 
@@ -18,7 +18,7 @@ Dưới đây là một ví dụ README hướng dẫn chạy API này:
 2. Cài đặt các thư viện cần thiết bằng lệnh sau:
 
    ```bash
-   pip install requirements.txt
+   pip install -r requirements.txt
    ```
 
 ## Chạy API
